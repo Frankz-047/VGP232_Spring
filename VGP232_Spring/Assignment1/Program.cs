@@ -3,9 +3,16 @@ using System.Collections.Generic;
 using System.IO;
 
 // TODO: Fill in your name and student number.
+//ERROR: -2. You didn't fill your name and student number.
 // Assignment 1
 // NAME: 
 // STUDENT NUMBER: 
+
+
+
+//Grade: 94/100
+//Comment: To see where are your mistakes, search for ERROR:
+//To find comments search for ERICK'S COMMENT
 
 namespace Assignment1
 {
@@ -84,6 +91,21 @@ namespace Assignment1
                 }
                 else if (args[i] == "-s" || args[i] == "--sort")
                 {
+                    //ERROR: -2. Try to do a check to see if you have enough arguments
+                    //before set the sortEnable. The proper implementation would be: 
+
+                    //if (args.Length > i + 1)
+                    //{
+                    //    sortEnabled = true;
+                    //    ++i;
+                    //    sortColumnName = args[i];
+                    //}
+                    //else
+                    //{
+                    //    Console.WriteLine("You must specify a sort column name.");
+                    //}
+
+
                     // TODO: set the sortEnabled flag and see if the next argument is set for the column name
                     sortEnabled = true;
                     // TODO: set the sortColumnName string used for determining if there's another sort function.
@@ -135,6 +157,8 @@ namespace Assignment1
                 // TODO: add implementation to determine the column name to trigger a different sort. (Hint: column names are the 4 properties of the weapon class)
                 Console.WriteLine($"Sorting by {sortColumnName}.");
                 // print: Sorting by <column name> e.g. BaseAttack
+
+                //ERICK'S COMMENT: When you have more than 3 conditions, use it switch statement.
 
                 // Sorts the list based off of the Weapon name.
                 if (sortColumnName == "Name")
@@ -231,10 +255,41 @@ namespace Assignment1
 
                 // The rest of the lines looks like the following:
                 // Skyward Blade,Sword,5,46
+                //ERROR: -2. You are using Parse outside a try catch block. This can crash your application.
+
+                //int lineNumber = 0;
+                //while (reader.Peek() > 0)
+                //{
+                //    string line = reader.ReadLine();
+                //    // string[] values = line.Split(',');
+                //    string[] values = line.Split(',');
+                //    Weapon weapon = new Weapon();
+
+                //    // NOTE using int.TryParse is ok too then they don't need the exception.
+                //    try
+                //    {
+                //        if (values.Length == 4)
+                //        {
+                //            weapon.Name = values[0];
+                //            weapon.Type = values[1];
+                //            weapon.Rarity = int.Parse(values[2]);
+                //            weapon.BaseAttack = int.Parse(values[3]);
+                //            output.Add(weapon);
+                //        }
+                //        lineNumber++;
+                //    }
+                //    catch (Exception)
+                //    {
+                //        Console.WriteLine("Unable to parse line {0}", lineNumber);
+                //    }
+                //}
+
                 while (reader.Peek() > 0)
                 {
                     string line = reader.ReadLine();
                     string[] values = line.Split(',');
+
+
 
                     Weapon weapon = new Weapon();
                     if (values.Length == 4)
