@@ -92,6 +92,15 @@ namespace Assignment2a
             Assert.AreEqual(WeaponCollection.Count, 95);
         }
 
+        //ERROR: -2 Test Error.
+        //[Test]
+        //public void WeaponCollection_LoadThatDoesNotExist_FalseAndEmpty()
+        //{
+        //    // Load returns false, expect an empty WeaponCollection
+        //    // LC2: You're suppose to call weaponCollection.Load("afilethatdoesnotexists.csv"); and assert to check it returns false and check it's empty. DONE
+        //    Assert.IsFalse(File.Exists("does_not_exist.csv"));
+        //    Assert.AreEqual(weaponCollection.Count, 0);
+        //}
         [Test]
         public void WeaponCollection_LoadThatDoesNotExist_FalseAndEmpty()
         {
@@ -120,6 +129,39 @@ namespace Assignment2a
             Assert.IsTrue(WeaponCollection.Count == 0);
         }
 
+        //ERROR: -2. Not passing.
+        //public void Weapon_TryParseValidLine_TruePropertiesSet()
+        //{
+        //    // Create a Weapon with the stats above set properly
+        //    Weapon expected = null;
+
+        //    // TSet properties of expected weapon
+        //    expected = new Weapon()
+        //    {
+        //        Name = "Skyward Blade",
+        //        Type = WeaponType.Sword,
+        //        Image = "https://vignette.wikia.nocookie.net/gensin-impact/images/0/03/Weapon_Skyward_Blade.png",
+        //        Rarity = 5,
+        //        BaseAttack = 46,
+        //        SecondaryStat = "Energy Recharge",
+        //        Passive = "Sky-Piercing Fang"
+        //    };
+
+        //    // Line to read
+        //    string line = "Skyward Blade,Sword,https://vignette.wikia.nocookie.net/gensin-impact/images/0/03/Weapon_Skyward_Blade.png,5,46,Energy Recharge,Sky-Piercing Fang";
+        //    Weapon actual = null;
+
+        //    // Check for the rest of the properties, Image,Rarity,SecondaryStat,Passive
+        //    Assert.IsTrue(Weapon.TryParse(line, out actual));
+        //    Assert.AreEqual(expected.Name, actual.Name);
+        //    Assert.AreEqual(expected.Type, actual.Type);
+        //    Assert.AreEqual(expected.BaseAttack, actual.BaseAttack);
+        //    Assert.AreEqual(expected.Image, actual.Image);
+        //    Assert.AreEqual(expected.Rarity, actual.Rarity);
+        //    Assert.AreEqual(expected.SecondaryStat, actual.SecondaryStat);
+        //    Assert.AreEqual(expected.Passive, actual.Passive);
+
+        //}
         // Weapon Unit Tests
         [Test]
         public void Weapon_TryParseValidLine_TruePropertiesSet()

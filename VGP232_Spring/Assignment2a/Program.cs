@@ -7,6 +7,8 @@ using System.IO;
 // NAME: Wuji Zhao
 // STUDENT NUMBER: 1940126
 
+//Grade: 80/100
+
 namespace Assignment2a
 {
     class MainClass
@@ -130,6 +132,8 @@ namespace Assignment2a
                 }
             }
 
+            //ERROR: -3. Why are you not using the SortBy method that you created for weaponCollection?
+            //replace all of this by: results.SortBy(columnName)
             if (sortEnabled)
             {
                 // TODO: add implementation to determine the column name to trigger a different sort. (Hint: column names are the 4 properties of the weapon class)
@@ -160,6 +164,10 @@ namespace Assignment2a
                 Console.WriteLine("There are {0} entries", results.Count);
             }
 
+            //ERROR: -5. You have a Save function, why you didn't replace here?
+            //if(appendToFile){
+            //  results.Save(outputfile)
+            //}
             if (results.Count > 0)
             {
                 if (!string.IsNullOrEmpty(outputFile))
@@ -204,6 +212,7 @@ namespace Assignment2a
             Console.WriteLine("Done!");
         }
 
+        //ERROR -2. You should remove this Parse Function
         /// <summary>
         /// Reads the file and line by line parses the data into a List of Weapons
         /// </summary>

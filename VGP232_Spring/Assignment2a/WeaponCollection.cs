@@ -57,6 +57,14 @@ namespace Assignment2a
             }
             return weapons;
         }
+
+        //ERROR: -5. You are comparing against an specific name. Get the columnName first and make it
+        //all lower case before you compare with lower case names.
+        //switch(columnName.ToLower()){
+        // case "name":
+        // ...
+        
+        //Also, where are the new properties like image, secondarystat, passive?
         public void SortBy(string columnName)
         {
             if (columnName == "Name")
@@ -104,6 +112,8 @@ namespace Assignment2a
             return true;
         }
 
+        //ERROR: -1.Missing Elements in header:
+        //Header is: "Name, Type, Image, Rarity, BaseAttack, SecondaryStat, Passive"
         public bool Save(string filename)
         {
             FileStream fs;
