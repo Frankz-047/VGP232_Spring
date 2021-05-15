@@ -16,7 +16,14 @@ namespace Assignment2a
         private string outputPath;
 
         const string INPUT_FILE = "data2.csv";
-        const string OUTPUT_FILE = "output.csv";
+
+        const string OUTPUT_FILE_CSV = "weapons.csv";
+        const string OUTPUT_FILE_XML = "weapons.xml";
+        const string OUTPUT_FILE_JSON = "weapons.json";
+
+        const string EMPTY_FILE_CSV = "empty.csv";
+        const string EMPTY_FILE_XML = "empty.xml";
+        const string EMPTY_FILE_JSON = "empty.json";
 
         // A helper function to get the directory of where the actual path is.
         private string CombineToAppPath(string filename)
@@ -28,7 +35,7 @@ namespace Assignment2a
         public void SetUp()
         {
             inputPath = CombineToAppPath(INPUT_FILE);
-            outputPath = CombineToAppPath(OUTPUT_FILE);
+            outputPath = CombineToAppPath(OUTPUT_FILE_CSV);
             WeaponCollection= new WeaponCollection();
             WeaponCollection.Load(inputPath);
         }
@@ -43,6 +50,145 @@ namespace Assignment2a
             }
         }
 
+        // Serialization Test
+        //Valid JSON
+        [TestCase(95)]
+        public void WeaponCollection_Load_Save_Load_ValidJson(int expectedValue)
+        {
+            outputPath = CombineToAppPath(OUTPUT_FILE_JSON);
+            WeaponCollection.Save(outputPath);
+            Assert.IsTrue(WeaponCollection.Load(outputPath));
+            Assert.AreEqual(expectedValue, WeaponCollection.Count());
+        }
+        [TestCase(95)]
+        public void WeaponCollection_Load_SaveAsJSON_Load_ValidJson(int expectedValue)
+        {
+            outputPath = CombineToAppPath(OUTPUT_FILE_JSON);
+            WeaponCollection.SaveAsJSON(outputPath);
+            Assert.IsTrue(WeaponCollection.Load(outputPath));
+            Assert.AreEqual(expectedValue, WeaponCollection.Count());
+        }
+        [TestCase(95)]
+        public void WeaponCollection_Load_SaveAsJSON_LoadJSON_ValidJson(int expectedValue)
+        {
+            outputPath = CombineToAppPath(OUTPUT_FILE_JSON);
+            WeaponCollection.SaveAsJSON(outputPath);
+            Assert.IsTrue(WeaponCollection.LoadJSON(outputPath));
+            Assert.AreEqual(expectedValue, WeaponCollection.Count());
+        }
+        [TestCase(95)]
+        public void WeaponCollection_Load_Save_LoadJSON_ValidJson(int expectedValue)
+        {
+            outputPath = CombineToAppPath(OUTPUT_FILE_JSON);
+            WeaponCollection.Save(outputPath);
+            Assert.IsTrue(WeaponCollection.LoadJSON(outputPath));
+            Assert.AreEqual(expectedValue, WeaponCollection.Count());
+        }
+
+        //Valid CSV
+        [TestCase(95)]
+        public void WeaponCollection_Load_Save_Load_ValidCsv(int expectedValue)
+        {
+            outputPath = CombineToAppPath(OUTPUT_FILE_CSV);
+            WeaponCollection.Save(outputPath);
+            Assert.IsTrue(WeaponCollection.Load(outputPath));
+            Assert.AreEqual(expectedValue, WeaponCollection.Count());
+        }
+        [TestCase(95)]
+        public void WeaponCollection_Load_SaveAsCSV_LoadCSV_ValidCsv(int expectedValue)
+        {
+            outputPath = CombineToAppPath(OUTPUT_FILE_CSV);
+            WeaponCollection.SaveAsCSV(outputPath);
+            Assert.IsTrue(WeaponCollection.LoadCSV(outputPath));
+            Assert.AreEqual(expectedValue, WeaponCollection.Count());
+        }
+
+        //Valid XML
+        [TestCase(95)]
+        public void WeaponCollection_Load_Save_Load_ValidXml(int expectedValue)
+        {
+            outputPath = CombineToAppPath(OUTPUT_FILE_XML);
+            WeaponCollection.Save(outputPath);
+            Assert.IsTrue(WeaponCollection.Load(outputPath));
+            Assert.AreEqual(expectedValue, WeaponCollection.Count());
+        }
+        [TestCase(95)]
+        public void WeaponCollection_Load_SaveAsXML_LoadXML_ValidXml(int expectedValue)
+        {
+            outputPath = CombineToAppPath(OUTPUT_FILE_XML);
+            WeaponCollection.SaveAsXML(outputPath);
+            Assert.IsTrue(WeaponCollection.LoadXML(outputPath));
+            Assert.AreEqual(expectedValue, WeaponCollection.Count());
+        }
+
+        //Empty JSON
+        [Test]
+        public void WeaponCollection_SaveEmpty_Load_ValidJson()
+        {
+            outputPath = CombineToAppPath(EMPTY_FILE_JSON);
+            WeaponCollection empty = new WeaponCollection();
+            empty.Clear();
+            empty.SaveAsJSON(outputPath);
+            empty.Load(outputPath);
+            Assert.IsFalse(empty.Any());
+        }
+
+        //Empty CSV
+        [Test]
+        public void WeaponCollection_SaveEmpty_Load_ValidCsv()
+        {
+            outputPath = CombineToAppPath(EMPTY_FILE_CSV);
+            WeaponCollection empty = new WeaponCollection();
+            empty.Clear();
+            empty.SaveAsCSV(outputPath);
+            empty.Load(outputPath);
+            Assert.IsFalse(empty.Any());
+        }
+
+        //Empty XML
+        [Test]
+        public void WeaponCollection_SaveEmpty_Load_ValidXml()
+        {
+            outputPath = CombineToAppPath(EMPTY_FILE_XML);
+            WeaponCollection empty = new WeaponCollection();
+            empty.Clear();
+            empty.SaveAsXML(outputPath);
+            empty.Load(outputPath);
+            Assert.IsFalse(empty.Any());
+        }
+
+        //Test Load InvalidFormat
+        [Test]
+        public void WeaponCollection_Load_SaveJSON_LoadXML_InvalidXml()
+        {
+            outputPath = CombineToAppPath(OUTPUT_FILE_JSON);
+            WeaponCollection.SaveAsJSON(outputPath);
+            Assert.IsFalse(WeaponCollection.LoadXML(outputPath));
+            Assert.IsFalse(WeaponCollection.Any());
+        }
+
+        [Test]
+        public void WeaponCollection_Load_SaveXML_LoadJSON_InvalidJson()
+        {
+            outputPath = CombineToAppPath(OUTPUT_FILE_XML);
+            WeaponCollection.SaveAsXML(outputPath);
+            Assert.IsFalse(WeaponCollection.LoadJSON(outputPath));
+            Assert.IsFalse(WeaponCollection.Any());
+        }
+
+        [Test]
+        public void WeaponCollection_ValidCsv_LoadXML_InvalidXml()
+        {
+            Assert.IsFalse(WeaponCollection.LoadXML(inputPath));
+            Assert.IsFalse(WeaponCollection.Any());
+        }
+
+        [Test]
+        public void WeaponCollection_ValidCsv_LoadJSON_InvalidJson()
+        {
+            Assert.IsFalse(WeaponCollection.LoadJSON(inputPath));
+            Assert.IsFalse(WeaponCollection.Any());
+        }
         // WeaponCollection Unit Tests
         [Test]
         public void WeaponCollection_GetHighestBaseAttack_HighestValue()
@@ -98,15 +244,16 @@ namespace Assignment2a
         //{
         //    // Load returns false, expect an empty WeaponCollection
         //    // LC2: You're suppose to call weaponCollection.Load("afilethatdoesnotexists.csv"); and assert to check it returns false and check it's empty. DONE
-        //    Assert.IsFalse(File.Exists("does_not_exist.csv"));
+        //    Assert.IsFalse(weaponCollection.Load("afilethatdoesnotexists.csv"));
         //    Assert.AreEqual(weaponCollection.Count, 0);
         //}
         [Test]
         public void WeaponCollection_LoadThatDoesNotExist_FalseAndEmpty()
         {
             // TODO: load returns false, expect an empty WeaponCollection
+            WeaponCollection.Clear();
             Assert.IsFalse(WeaponCollection.Load("Nothing"));
-            Assert.Equals(WeaponCollection, null);
+            Assert.AreEqual(0 , WeaponCollection.Count);
         }
 
         [Test]
@@ -185,13 +332,13 @@ namespace Assignment2a
             Assert.IsTrue(Weapon.TryParse(line, out actual));
             // TODO: uncomment this once you have TryParse implemented.
             Assert.IsTrue(Weapon.TryParse(line, out actual));
-            Assert.Equals(expected.Name, actual.Name);
-            Assert.Equals(expected.Type, actual.Type);
-            Assert.Equals(expected.BaseAttack, actual.BaseAttack);
-            Assert.Equals(expected.Image, actual.Image);
-            Assert.Equals(expected.Rarity, actual.Rarity);
-            Assert.Equals(expected.SecondaryStat, actual.SecondaryStat);
-            Assert.Equals(expected.Passive, actual.Passive);
+            Assert.AreEqual(expected.Name, actual.Name);
+            Assert.AreEqual(expected.Type, actual.Type);
+            Assert.AreEqual(expected.BaseAttack, actual.BaseAttack);
+            Assert.AreEqual(expected.Image, actual.Image);
+            Assert.AreEqual(expected.Rarity, actual.Rarity);
+            Assert.AreEqual(expected.SecondaryStat, actual.SecondaryStat);
+            Assert.AreEqual(expected.Passive, actual.Passive);
             // TODO: check for the rest of the properties, Image,Rarity,SecondaryStat,Passive
         }
 

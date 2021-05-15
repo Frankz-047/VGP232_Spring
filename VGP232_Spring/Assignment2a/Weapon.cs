@@ -34,13 +34,13 @@ namespace Assignment2a
             {
                 try
                 {
-                    weapon.Name = values[0].ToString();
+                    weapon.Name = values[0];
                     weapon.Type = Enum.Parse<WeaponType>(values[1]);
-                    weapon.Image = values[2].ToString();
+                    weapon.Image = values[2];
                     weapon.Rarity = int.Parse(values[3]);
                     weapon.BaseAttack = int.Parse(values[4]);
-                    weapon.SecondaryStat = values[5].ToString();
-                    weapon.Passive = values[6].ToString();
+                    weapon.SecondaryStat = values[5];
+                    weapon.Passive = values[6];
                     return true;
                 }
                 catch (Exception)
@@ -82,6 +82,23 @@ namespace Assignment2a
             return left.BaseAttack.CompareTo(right.BaseAttack);
         }
 
+        // CompareBySecondaryStat
+        public static int CompareBySecondaryStat(Weapon left, Weapon right)
+        {
+            return left.SecondaryStat.CompareTo(right.SecondaryStat);
+        }
+
+        // CompareByPassive
+        public static int CompareByPassive(Weapon left, Weapon right)
+        {
+            return left.Passive.CompareTo(right.Passive);
+        }
+        // CompareByImage
+        public static int CompareByImage(Weapon left, Weapon right)
+        {
+            return left.Image.CompareTo(right.Image);
+        }
+
         /// <summary>
         /// The Weapon string with all the properties
         /// </summary>
@@ -90,8 +107,7 @@ namespace Assignment2a
         {
             // TODO: construct a comma seperated value string
             // Name,Type,Rarity,BaseAttack
-            string temp = $"{Name},{Type},{Image},{Rarity},{BaseAttack},{SecondaryStat},{Passive}";
-            return temp;
+            return string.Format($"{Name},{Type},{Image},{Rarity},{BaseAttack},{SecondaryStat},{Passive}");
         }
     }
 }
