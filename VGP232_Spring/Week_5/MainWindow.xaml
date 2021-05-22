@@ -42,7 +42,7 @@
                 <Button Content="Remove" Margin="0,5,0,0"/>
                 <Button Content="Generate" Margin="0,5,0,0"/>
             </StackPanel>
-            <ListBox Name="ListBoxImage" Grid.Column="2" Grid.Row="4">
+            <ListBox Name="ListBoxImage" Grid.Column="2" Grid.Row="4" SelectionChanged="ListBoxImage_SelectionChanged">
                 <ListBox.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel Orientation="Horizontal">

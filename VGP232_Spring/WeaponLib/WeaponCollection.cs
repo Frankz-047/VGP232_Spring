@@ -7,11 +7,11 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace Assignment2a
+namespace WeaponLib
 {
-    public class WeaponCollection : List<Weapon>, 
-        IPeristence, 
-        IXMLSerializable, 
+    public class WeaponCollection : List<Weapon>,
+        IPeristence,
+        IXMLSerializable,
         JSONSerializable,
         ICsvSerializable
     {
@@ -84,7 +84,7 @@ namespace Assignment2a
         //switch(columnName.ToLower()){
         // case "name":
         // ...
-        
+
         //Also, where are the new properties like image, secondarystat, passive?
         public void SortBy(string columnName)
         {
@@ -186,7 +186,7 @@ namespace Assignment2a
             XmlSerializer xmlser = new XmlSerializer(typeof(WeaponCollection));
             try
             {
-                
+
                 using (StreamReader sr = new StreamReader(filename))
                 {
                     this.Clear();
@@ -231,7 +231,7 @@ namespace Assignment2a
             }
             try
             {
-                
+
                 using (StreamReader sr = new StreamReader(filename))
                 {
                     this.AddRange(JsonSerializer.Deserialize<WeaponCollection>(sr.ReadToEnd()));
@@ -252,7 +252,7 @@ namespace Assignment2a
             {
                 return false;
             }
-            
+
             using (StreamReader reader = new StreamReader(path))
             {
                 string header = reader.ReadLine();

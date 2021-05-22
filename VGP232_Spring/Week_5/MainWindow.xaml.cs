@@ -34,5 +34,10 @@ namespace Week_5
         {
 
         }
+
+        private void ListBoxImage_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

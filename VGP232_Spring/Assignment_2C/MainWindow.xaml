@@ -1,0 +1,58 @@
+﻿<Window x:Class="Assignment_2C.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Assignment_2C"
+        mc:Ignorable="d"
+        Title="Weapons Editor" Height="500" Width="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="211*"/>
+            <ColumnDefinition Width="73*"/>
+            <ColumnDefinition Width="8*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        <ListBox Name="lbWeapons" Margin="10,10,10,10" Grid.Column="1" Grid.Row="4" Grid.RowSpan="6" FontSize="16" SelectionChanged="lbWeapons_SelectionChanged"/>
+        <Button Content="Load" Width="60" Height="25" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Click="LoadPressed" Margin="10,0,0,0" FontSize="16"/>
+        <Button Content="Save" Width="60" Height="25" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Click="SavePressed" Margin="81,0,0,0" FontSize="16"/>
+        <Button Content="Add" Width="80" Height="25" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Center" Click="AddPressed" FontSize="16"/>
+        <Button Content="Edit" Width="80" Height="25" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" Click="EditPressed" FontSize="16"/>
+        <Button Content="Remove" Width="80" Height="25" Grid.Column="2" HorizontalAlignment="Center" Grid.Row="6" VerticalAlignment="Center" Click="RemovePressed" FontSize="16"/>
+        <Grid Grid.Column="1" Grid.Row="1" Margin="0,0,0,58" Grid.RowSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90*"/>
+                <ColumnDefinition Width="150*"/>
+                <ColumnDefinition Width="150*"/>
+                <ColumnDefinition Width="150*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock HorizontalAlignment="Left" Margin="0,0,0,0" Text="Sort by:" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="16"/>
+            <RadioButton GroupName="Sort" Content="Name" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Checked="SortByName_Checked"/>
+            <RadioButton GroupName="Sort" Content="BaseAttack" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" Checked="SortByBaseAttack_Checked"/>
+            <RadioButton GroupName="Sort" Content="Rarity" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" Checked="SortByRarity_Checked"/>
+            <RadioButton GroupName="Sort" Content="Passive" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="SortByPassive_Checked"/>
+            <RadioButton GroupName="Sort" Content="SecondaryStat" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top" Checked="SortBySecondaryStat_Checked"/>
+        </Grid>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,0,0" Grid.Row="2" Text="Show only type" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="16"/>
+        <ComboBox Name="CbType" Grid.Column="1" HorizontalAlignment="Left" Margin="130,0,0,0" Grid.Row="2" VerticalAlignment="Center" Width="276" SelectionChanged="ComboBox_SelectionChanged"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="0,0,0,0" Grid.Row="3" Text="Filter by name:" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="16"/>
+        <TextBox Name="Filter_Name"  Grid.Column="1" HorizontalAlignment="Left" Margin="130,0,0,0" Grid.Row="3" TextChanged="FilterTextChange" Text="" TextWrapping="NoWrap" VerticalAlignment="Center" Width="276" Height="20" FontSize="16"/>
+
+    </Grid>
+</Window>
