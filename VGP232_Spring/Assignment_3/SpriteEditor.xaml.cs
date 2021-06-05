@@ -23,12 +23,12 @@ namespace Assignment_3
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SpriteEditor : Window
     {
         Spritesheet mySpriteSheet { get; set; }
 
         public string myXMLPath { get; set; }
-        public MainWindow()
+        public SpriteEditor()
         {
             InitializeComponent();
             mySpriteSheet = new Spritesheet();
