@@ -19,9 +19,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week_5_Console_Example", "W
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Week_5", "Week_5\Week_5.csproj", "{B4FA52C2-65D9-4F7F-AFF8-B240655FDCFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeaponLib", "WeaponLib\WeaponLib.csproj", "{C0B11FFC-2A1F-48D4-8180-B1BFD8B3E527}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeaponLib", "WeaponLib\WeaponLib.csproj", "{C0B11FFC-2A1F-48D4-8180-B1BFD8B3E527}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment_2C", "Assignment_2C\Assignment_2C.csproj", "{912EF2D4-B676-4428-8609-33A803AA883B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Assignment_2C", "Assignment_2C\Assignment_2C.csproj", "{912EF2D4-B676-4428-8609-33A803AA883B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TextureAtlasLib", "..\TextureAtlasLib\TextureAtlasLib.csproj", "{74BB94EB-BC7B-4BBA-92A3-D74268741500}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assignment_3", "Assignment_3\Assignment_3.csproj", "{B2D20D98-2DCC-4AFD-9B99-9E8E896C65A8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +73,14 @@ Global
 		{912EF2D4-B676-4428-8609-33A803AA883B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{912EF2D4-B676-4428-8609-33A803AA883B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{912EF2D4-B676-4428-8609-33A803AA883B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74BB94EB-BC7B-4BBA-92A3-D74268741500}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74BB94EB-BC7B-4BBA-92A3-D74268741500}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74BB94EB-BC7B-4BBA-92A3-D74268741500}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74BB94EB-BC7B-4BBA-92A3-D74268741500}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2D20D98-2DCC-4AFD-9B99-9E8E896C65A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2D20D98-2DCC-4AFD-9B99-9E8E896C65A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2D20D98-2DCC-4AFD-9B99-9E8E896C65A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2D20D98-2DCC-4AFD-9B99-9E8E896C65A8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

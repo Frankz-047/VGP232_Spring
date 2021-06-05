@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Spritesheet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Columns>5</Columns>
+  <OutputFile>TestSprite.png</OutputFile>
+  <OutputDirectory>E:\VGP232_Spring\Test</OutputDirectory>
+  <IncludeMetaData>true</IncludeMetaData>
+  <InputPaths>
+    <string>E:\VGP232_Spring\Player\player_action1.png</string>
+    <string>E:\VGP232_Spring\Player\player_action2.png</string>
+    <string>E:\VGP232_Spring\Player\player_back.png</string>
+    <string>E:\VGP232_Spring\Player\player_cheer1.png</string>
+    <string>E:\VGP232_Spring\Player\player_cheer2.png</string>
+    <string>E:\VGP232_Spring\Player\player_climb1.png</string>
+    <string>E:\VGP232_Spring\Player\player_climb2.png</string>
+    <string>E:\VGP232_Spring\Player\player_duck.png</string>
+    <string>E:\VGP232_Spring\Player\player_fall.png</string>
+    <string>E:\VGP232_Spring\Player\player_hang.png</string>
+    <string>E:\VGP232_Spring\Player\player_hold1.png</string>
+    <string>E:\VGP232_Spring\Player\player_hold2.png</string>
+    <string>E:\VGP232_Spring\Player\player_hurt.png</string>
+    <string>E:\VGP232_Spring\Player\player_idle.png</string>
+    <string>E:\VGP232_Spring\Player\player_jump.png</string>
+    <string>E:\VGP232_Spring\Player\player_kick.png</string>
+    <string>E:\VGP232_Spring\Player\player_skid.png</string>
+    <string>E:\VGP232_Spring\Player\player_slide.png</string>
+    <string>E:\VGP232_Spring\Player\player_stand.png</string>
+    <string>E:\VGP232_Spring\Player\player_swim1.png</string>
+    <string>E:\VGP232_Spring\Player\player_swim2.png</string>
+    <string>E:\VGP232_Spring\Player\player_talk.png</string>
+    <string>E:\VGP232_Spring\Player\player_walk1.png</string>
+    <string>E:\VGP232_Spring\Player\player_walk2.png</string>
+  </InputPaths>
+</Spritesheet>
