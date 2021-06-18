@@ -27,6 +27,7 @@ namespace PerksEditor
         public List<Perk> SelectedPerks { get; set; }
         public bool isSelectionChanged { get; set; }
         public int totalCost { get; set; }
+        public int selectedCost { get; set; }
         public SimulationWindow(PerksCollection perks)
         {
             InitializeComponent();
@@ -45,6 +46,8 @@ namespace PerksEditor
         private void Reset_Click(object sender, RoutedEventArgs e)
         {
             Reset();
+            MessageBox.Show("All stats reseted!");
+            isSelectionChanged = true;
         }
 
         private void Pick_Click(object sender, RoutedEventArgs e)
@@ -55,9 +58,20 @@ namespace PerksEditor
             }
             else
             {
-                SelectedPerks.Add(perksCollection[lbAll.SelectedIndex]);
-                lbSelected.Items.Refresh();
-                isSelectionChanged = true;
+                int additionalCost = perksCollection[lbAll.SelectedIndex].Cost;
+                if ((selectedCost + additionalCost) <= totalCost)
+                {
+                    SelectedPerks.Add(perksCollection[lbAll.SelectedIndex]);
+                    lbSelected.Items.Refresh();
+                    selectedCost += additionalCost;
+                    tbSelectedCost.Text = selectedCost.ToString();
+                    isSelectionChanged = true;
+                }
+                else
+                {
+                    MessageBox.Show("Exceeding Total Cost!");
+                    lbSelected.Items.Refresh();
+                }
             }
         }
 
@@ -69,8 +83,11 @@ namespace PerksEditor
             }
             else
             {
+                int additionalCost = perksCollection[lbSelected.SelectedIndex].Cost;
                 SelectedPerks.RemoveAt(lbSelected.SelectedIndex);
                 lbSelected.Items.Refresh();
+                selectedCost -= additionalCost;
+                tbSelectedCost.Text = selectedCost.ToString();
                 isSelectionChanged = true;
             }
         }
@@ -129,8 +146,23 @@ namespace PerksEditor
 
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex("[^0-9]+[.]");
+            Regex regex = new Regex("[^.-9]");
             e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void IntergerValidationTextBox(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void Cost_TextChange(object sender, TextChangedEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox.Text != "")
+            {
+                totalCost = int.Parse(textBox.Text);
+            }
         }
     }
 }

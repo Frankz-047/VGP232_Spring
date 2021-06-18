@@ -64,11 +64,11 @@ namespace PerksEditor
             {
                 if (perk.Value > 0)
                 {
-                    modifiedValue *= (perk.Value * 0.01f);
+                    modifiedValue *= ((perk.Value * + 0.01f) + 1);
                 }
                 else if (perk.Value < 0)
                 {
-                    modifiedValue /= (perk.Value * -0.01f);
+                    modifiedValue /= ((perk.Value * -0.01f) + 1);
                 }
                 else if (perk.Value == 0)
                 {

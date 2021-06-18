@@ -36,7 +36,7 @@
         <TextBlock Grid.Column="1" HorizontalAlignment="Left" Grid.Row="7" Text="Custom Description:" VerticalAlignment="Top" FontSize="16" Height="21" Margin="0,42,0,0" Grid.RowSpan="2" Width="155"/>
         <TextBox Grid.Column="2" Text="{Binding Name}" FontSize="16" Margin="0,21,0,0" Grid.RowSpan="2"/>
         <TextBox Name="tbIcon" Grid.Column="2" Grid.Row="1" Text="{Binding Icon}" FontSize="16" Margin="0,42,0,0" Grid.RowSpan="2"/>
-        <Button Grid.Column="2" Grid.Row="3" Margin="264,35,32,26" Click="GetIconFromFile">Get from file</Button>
+        <Button Grid.Column="2" Grid.Row="3" Margin="264,35,10,26" Click="GetIconFromFile">Get from file</Button>
         <TextBox  Grid.Column="2" Grid.Row="5" Text="{Binding Value}" PreviewTextInput="NumberValidationTextBox"/>
         <TextBox Grid.Column="2" Grid.Row="7" Text="{Binding Cost}" PreviewTextInput="NumberValidationTextBox" FontSize="16"  Grid.RowSpan="1"/>
         <TextBox Grid.Column="2" Grid.Row="8" Text="{Binding CustomDescription}" FontSize="16"  Grid.RowSpan="1"/>

@@ -27,4 +27,31 @@
     <Cost>3</Cost>
     <CustomDescription>That is a really big back pack</CustomDescription>
   </Perk>
+  <Perk>
+    <Name>Firery</Name>
+    <Icon>E:\VGP232_Spring\Icons\T_1_fire_.png</Icon>
+    <ModifyField>FireRate</ModifyField>
+    <Value>-50</Value>
+    <ModifyMethod>Mutiply</ModifyMethod>
+    <Cost>10</Cost>
+    <CustomDescription>Fire Away!</CustomDescription>
+  </Perk>
+  <Perk>
+    <Name>HandyMan</Name>
+    <Icon>E:\VGP232_Spring\Icons\T_4_bottle_small_empty_.png</Icon>
+    <ModifyField>ReloadTime</ModifyField>
+    <Value>-20</Value>
+    <ModifyMethod>Mutiply</ModifyMethod>
+    <Cost>7</Cost>
+    <CustomDescription>Load faster!faster!</CustomDescription>
+  </Perk>
+  <Perk>
+    <Name>Bandit</Name>
+    <Icon>E:\VGP232_Spring\Icons\T_5_head_rogure_.png</Icon>
+    <ModifyField>MagSize</ModifyField>
+    <Value>6</Value>
+    <ModifyMethod>Add</ModifyMethod>
+    <Cost>12</Cost>
+    <CustomDescription>Now you can magically load more bullets in the cilinder. Wow!</CustomDescription>
+  </Perk>
 </ArrayOfPerk>
