@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPerk xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Perk>
+    <Name>Armored</Name>
+    <Icon>E:\VGP232_Spring\Icons\T_2_head_gladiator_.png</Icon>
+    <ModifyField>Health</ModifyField>
+    <Value>100</Value>
+    <ModifyMethod>Add</ModifyMethod>
+    <Cost>5</Cost>
+    <CustomDescription>These armors are not for show</CustomDescription>
+  </Perk>
+  <Perk>
+    <Name>Ninja</Name>
+    <Icon>E:\VGP232_Spring\Icons\T_9_kunai_.png</Icon>
+    <ModifyField>MoveSpeed</ModifyField>
+    <Value>20</Value>
+    <ModifyMethod>Mutiply</ModifyMethod>
+    <Cost>2</Cost>
+    <CustomDescription>Ninjas do move faster, right?</CustomDescription>
+  </Perk>
+  <Perk>
+    <Name>PackPacker</Name>
+    <Icon>E:\VGP232_Spring\Icons\T_4_coin_bag1_.png</Icon>
+    <ModifyField>Ammo</ModifyField>
+    <Value>50</Value>
+    <ModifyMethod>Add</ModifyMethod>
+    <Cost>3</Cost>
+    <CustomDescription>That is a really big back pack</CustomDescription>
+  </Perk>
+</ArrayOfPerk>

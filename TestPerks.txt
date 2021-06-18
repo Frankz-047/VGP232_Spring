@@ -1,0 +1,4 @@
+Name, Icon, ModifyField, Value, ModifyMethod, Cost, CustomDescription
+Armored,E:\VGP232_Spring\Icons\T_2_head_gladiator_.png,Health,100,Add,5,These armors are not for show
+Ninja,E:\VGP232_Spring\Icons\T_9_kunai_.png,MoveSpeed,20,Mutiply,2,Ninjas do move faster right?
+PackPacker,E:\VGP232_Spring\Icons\T_4_coin_bag1_.png,Ammo,50,Add,3,That is a really big back pack

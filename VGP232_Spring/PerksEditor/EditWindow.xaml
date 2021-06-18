@@ -1,0 +1,52 @@
+﻿<Window x:Class="PerksEditor.EditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PerksEditor"
+        mc:Ignorable="d"
+        Title="EditWindow" Height="500" Width="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="31*"/>
+            <ColumnDefinition Width="164*"/>
+            <ColumnDefinition Width="374*"/>
+            <ColumnDefinition Width="31*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Text="Name:" VerticalAlignment="Top" FontSize="16" Height="20" Margin="0,21,0,0" Grid.RowSpan="2" Width="50"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Grid.Row="1" Text="Icon Url:" VerticalAlignment="Top" FontSize="16" Height="21" Margin="0,42,0,0" Grid.RowSpan="2" Width="64"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Grid.Row="2" Text="Icon:" VerticalAlignment="Top" FontSize="16" Height="21" Margin="0,42,0,0" Grid.RowSpan="2" Width="37"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Grid.Row="4" Text="Modify Field:" VerticalAlignment="Top" FontSize="16" Height="20" Width="99"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Grid.Row="5" Text="Value:" VerticalAlignment="Top" FontSize="16" Height="20" Width="47"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Grid.Row="5" Text="Modify Method:" VerticalAlignment="Top" FontSize="16" Height="20" Margin="0,42,0,0" Grid.RowSpan="2" Width="124"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Grid.Row="6" Text="Cost:" VerticalAlignment="Top" FontSize="16" Height="21" Margin="0,42,0,0" Grid.RowSpan="2" Width="38"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Grid.Row="7" Text="Custom Description:" VerticalAlignment="Top" FontSize="16" Height="21" Margin="0,42,0,0" Grid.RowSpan="2" Width="155"/>
+        <TextBox Grid.Column="2" Text="{Binding Name}" FontSize="16" Margin="0,21,0,0" Grid.RowSpan="2"/>
+        <TextBox Name="tbIcon" Grid.Column="2" Grid.Row="1" Text="{Binding Icon}" FontSize="16" Margin="0,42,0,0" Grid.RowSpan="2"/>
+        <Button Grid.Column="2" Grid.Row="3" Margin="264,35,32,26" Click="GetIconFromFile">Get from file</Button>
+        <TextBox  Grid.Column="2" Grid.Row="5" Text="{Binding Value}" PreviewTextInput="NumberValidationTextBox"/>
+        <TextBox Grid.Column="2" Grid.Row="7" Text="{Binding Cost}" PreviewTextInput="NumberValidationTextBox" FontSize="16"  Grid.RowSpan="1"/>
+        <TextBox Grid.Column="2" Grid.Row="8" Text="{Binding CustomDescription}" FontSize="16"  Grid.RowSpan="1"/>
+        <ComboBox Name="CbField" Grid.Column="2" Grid.Row="4" Text="{Binding ModifyField}"  Grid.RowSpan="1"/>
+        <ComboBox Name="CbMethod" Grid.Column="2" Grid.Row="6" Text="{Binding ModifyMethod}"  Grid.RowSpan="1"/>
+
+        <StackPanel Grid.Column="2" Grid.Row="9" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,21" Grid.RowSpan="2" Width="130">
+            <Button Width="50" Height="25" Margin="10 1 10 0" Click="SavePressed">Save</Button>
+            <Button Width="50" Height="25" Margin="10 1 0 0" Click="CancelPressed">Cancel</Button>
+        </StackPanel>
+        <Image Name="Image_Icon"  Grid.Column="2" HorizontalAlignment="Left" Height="100" Margin="5,42,0,0" Grid.Row="2" VerticalAlignment="Top" Width="100" Source="{Binding Icon}" Grid.RowSpan="2"/>
+    </Grid>
+</Window>
